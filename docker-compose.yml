@@ -1,11 +1,14 @@
 services:
   vite:
-    container_name: PW-node
+    container_name: personal-web
     build: .
     ports:
       - "5173:5173"
     volumes:
-      - ./personal-web:/app/personal-web
-      - /app/personal-web/node_modules
+      - ./personal-web:/app        # mount project
+      - /app/node_modules          # keep node_modules inside container
+    environment:
+      - CHOKIDAR_USEPOLLING=true   # ensure hot reload works in Docker
+      - CHOKIDAR_INTERVAL=100
     stdin_open: true
     tty: true

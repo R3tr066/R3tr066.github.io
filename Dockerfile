@@ -2,6 +2,7 @@ FROM node:24-alpine
 
 WORKDIR /app
 
+
 COPY personal-web/package*.json ./
 
 RUN npm install
