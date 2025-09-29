@@ -28,11 +28,3 @@ jobs:
       - name: Build project
         working-directory: personal-web
         run: npm run build
-
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v4
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_branch: master
-          publish_dir: ./personal-web/dist
-          destination_repo: R3tr066/R3tr066.github.io
